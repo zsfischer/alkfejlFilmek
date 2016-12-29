@@ -209,7 +209,7 @@ Fejlesztő környezet: Visual Studio Code
 ### Saját tesztjeim
 1. Felhasználó regisztrálása és kijelentkezése
 2. Most regisztrált felhasználó bejelentkezése és kijelentkezése
-3. Most regisztrált felhasználó bejelntkezése->film létrehozása->kijelentkezése
+3. Most regisztrált felhasználó bejelentkezése->film létrehozása->kijelentkezése
 4. Most létrehozott film törlése(bejelentkezés->törlés->kijelentkezés)
 
 ![selenium_use](https://cloud.githubusercontent.com/assets/22147826/21543624/7fc29e64-cdc8-11e6-9af8-86b69098dcd4.png)
