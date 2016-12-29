@@ -204,7 +204,7 @@ Fejlesztő környezet: Visual Studio Code
 
 ![selenium_telepites](https://cloud.githubusercontent.com/assets/22147826/21543511/5d5f819e-cdc7-11e6-8333-3d2db242d355.png)
 
-* Selenium IDE használata: Commandok hozzáadása->mikor milyen lépés következik, milyen oldalnak kell megjelnnie, minek kell történnie.
+* Selenium IDE használata: Commandok hozzáadása->mikor milyen lépés következik, milyen oldalnak kell megjelennie, minek kell történnie.
 
 ### Saját tesztjeim
 1. Felhasználó regisztrálása és kijelentkezése
