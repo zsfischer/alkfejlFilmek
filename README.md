@@ -225,3 +225,54 @@ Fejlesztő környezet: Visual Studio Code
   * Csak bejelentkezett felhasználó által látható oldalak láthatósága
   * Film sikeres törlése, szerkesztése
   * Sikeres szűrés a kereső oldalon
+
+# 2. beadandó dokumentációjának kiegészítése
+
+###3.	Implementáció
+
+######Fejlesztőkörnyezet
+
+Webes IDE: **Cloud9**
+
+* Github account szükséges
+* Belépés után új workspace létrehozása (node.js)
+* Ezután elkezdhetjük a kód írását
+* _git add <fajlnev>_ paranccsal kiválaszthatunk egy fájlt verzionálásra, vagy _git add ._ paranccsal az összes fájlt kiválaszthatjuk
+* _git commit -m "commit"_ paranccsal feltehetjük a fájlokat a cloud9 helyi tárolójába. Az így megjelölt verziókhoz a későbbiekben visszatérhetünk, különbségüket megtekinthetjük.
+* _git push origin master_ paranccsal a lokális tárolóból feltölthetjük a tartalmat a Github-ra.
+
+######Könyvtárstruktúra, funkciók
+
+* **Filmek**
+  * **middleware**
+    * kernel.js
+    *routes.js
+  * **controllers**
+    * FilmController.js
+    * UserController.js
+  * **models**
+    * Category.js
+    * Film.js
+    * Token.js
+    * User.js
+  * **scripts**
+    * delete.js
+    * login.js
+    * logout.js
+    * register.js
+  * **views**:
+    * createFilm.njk
+    * editFilm.njk
+    * layout.njk
+    * login.njk
+    * main.njk
+    * master.njk
+    * me.njk
+    * register.njk
+    * searchFilm.njk
+    * showFilm.njk
+    * showUser.njk
+    * welcome.njk
+  * .env
+  * _package.json_
+  * _server.js_
