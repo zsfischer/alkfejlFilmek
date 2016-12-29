@@ -228,17 +228,17 @@ Fejlesztő környezet: Visual Studio Code
 
 # 2. beadandó dokumentációjának kiegészítése
 
-###3.	Implementáció
+###Implementáció
 
 ######Fejlesztőkörnyezet
 
-Webes IDE: **Cloud9**
+Visual Studi Code használata
 
 * Github account szükséges
 * Belépés után új workspace létrehozása (node.js)
 * Ezután elkezdhetjük a kód írását
 * _git add <fajlnev>_ paranccsal kiválaszthatunk egy fájlt verzionálásra, vagy _git add ._ paranccsal az összes fájlt kiválaszthatjuk
-* _git commit -m "commit"_ paranccsal feltehetjük a fájlokat a cloud9 helyi tárolójába. Az így megjelölt verziókhoz a későbbiekben visszatérhetünk, különbségüket megtekinthetjük.
+* _git commit -m "commit"_ parancs. Az így megjelölt verziókhoz a későbbiekben visszatérhetünk, különbségüket megtekinthetjük.
 * _git push origin master_ paranccsal a lokális tárolóból feltölthetjük a tartalmat a Github-ra.
 
 ######Könyvtárstruktúra, funkciók
