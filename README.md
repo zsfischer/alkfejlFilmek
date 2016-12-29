@@ -213,3 +213,15 @@ Fejlesztő környezet: Visual Studio Code
 4. Most létrehozott film törlése(bejelentkezés->törlés->kijelentkezés)
 
 ![selenium_use](https://cloud.githubusercontent.com/assets/22147826/21543624/7fc29e64-cdc8-11e6-9af8-86b69098dcd4.png)
+
+#####4.4.Tesztesetek
+* User
+  * Felhasználó létrehozása
+  * Bejelentkezés jó, és rossz jelszóval
+  * Kijelentkezés
+* Film
+  * Főoldal láthatósága
+  * Új film flétrehozás oldal láthatósága
+  * Csak bejelentkezett felhasználó által látható oldalak láthatósága
+  * Film sikeres törlése, szerkesztése
+  * Sikeres szűrés a kereső oldalon
