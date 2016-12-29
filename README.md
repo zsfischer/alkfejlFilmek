@@ -246,7 +246,7 @@ Webes IDE: **Cloud9**
 * **Filmek**
   * **middleware**
     * kernel.js
-    *routes.js
+    * routes.js
   * **controllers**
     * FilmController.js
     * UserController.js
