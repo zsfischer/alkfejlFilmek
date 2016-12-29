@@ -214,8 +214,8 @@ Fejlesztő környezet: Visual Studio Code
 
 ![selenium_use](https://cloud.githubusercontent.com/assets/22147826/21543624/7fc29e64-cdc8-11e6-9af8-86b69098dcd4.png)
 
-#####4.4.Tesztesetek
-* User
+#####Tesztesetek
+* Felhasználó
   * Felhasználó létrehozása
   * Bejelentkezés jó, és rossz jelszóval
   * Kijelentkezés
