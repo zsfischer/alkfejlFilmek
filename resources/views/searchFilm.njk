@@ -1,0 +1,205 @@
+{% extends 'layout' %}
+
+{% block scripts %}
+<script src="/scripts/login.js"></script>
+<script src="/scripts/logout.js"></script>
+<script src="/scripts/register.js"></script>
+{% endblock %}
+
+{% block title %}Film keresés{% endblock %}
+{% block content %}
+  <h1>Keress valami jó filmet</h1>
+  <form action="/films" method="GET">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputFilmName">Film címe</label>
+          <input type="text" class="form-control" placeholder="Film címe" id="inputFilmName" name="filmName" value="{{ filters.filmName }}">
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputCategory">Kategória</label>
+          <select class="form-control" id="inputCategory" name="category">
+            <option value="">--</option>
+            {% for category in categories %}
+            {% if filters.category == category.id %}
+            <option value="{{ category.id }}" selected>{{ category.name }}</option>
+            {% else %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="inputCreatedBy">Beküldte</label>
+          <select class="form-control" id="inputCreatedBy" name="createdBy">
+            <option value="">--</option>
+            {% for user in users %}
+            {% if filters.createdBy == user.id %}
+            <option value="{{ user.id }}" selected>{{ user.username }}</option>
+            {% else %}
+            <option value="{{ user.id }}">{{ user.username }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>&nbsp;</label>
+          <button class="btn btn-block btn-primary" type="submit">Keres</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <h2>Találatok ({{ films.total }})</h2>
+  <table class="table table-striped table-hover ">
+  <thead>
+    <tr >
+      <th>#</th>
+      <th>Film címe</th>
+      <th>Kategória</th>
+      <th>Beküldte</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  {% for filmBatch in films.data | batch(50) %}
+  {% for film in filmBatch %}
+  <tbody>
+  {% if film.category_id == 1 %}
+    <tr>
+      <td class="active">{{film.id}}</td>
+      <td class="active">{{film.name}}</td>
+      {% for category in categories %}
+      {% if category.id==film.category_id %}
+      <td class="active">{{category.name}}</td>
+      {% endif %}
+      {% endfor %}
+      <td class="active">{{film.user.username}}</td>
+      <td><a class="result-item" href="/films/{{ film.id }}"><button type="submit" class="btn btn-success btn-sm">Megtekintés</button></a></td>
+      {% if (film.user_id == currentUser.id) %}
+      <td><a href="/films/{{ film.id }}/delete" class="btn btn-danger btn-sm">Töröl</a></td>
+      {% else %}
+      <td></td
+      {% endif %}
+    </tr>
+    {% endif %}
+{% if film.category_id == 2 %}
+    <tr>
+      <td class="danger">{{film.id}}</td>
+      <td class="danger">{{film.name}}</td>
+      {% for category in categories %}
+      {% if category.id==film.category_id %}
+      <td class="danger">{{category.name}}</td>
+      {% endif %}
+      {% endfor %}
+      <td class="danger">{{film.user.username}}</td>
+      <td><a class="result-item" href="/films/{{ film.id }}"><button type="submit" class="btn btn-success btn-sm">Megtekintés</button></a></td>
+      {% if (film.user_id == currentUser.id) %}
+      <td><a href="/films/{{ film.id }}/delete" class="btn btn-danger btn-sm">Töröl</a></td>
+      {% else %}
+      <td></td
+      {% endif %}
+    </tr>
+    {% endif %}
+  {% if film.category_id == 3 %}
+    <tr>
+      <td class="warning">{{film.id}}</td>
+      <td class="warning">{{film.name}}</td>
+      {% for category in categories %}
+      {% if category.id==film.category_id %}
+      <td class="warning">{{category.name}}</td>
+      {% endif %}
+      {% endfor %}
+      <td class="warning">{{film.user.username}}</td>
+      <td><a class="result-item" href="/films/{{ film.id }}"><button type="submit" class="btn btn-success btn-sm">Megtekintés</button></a></td>
+      {% if (film.user_id == currentUser.id) %}
+      <td><a href="/films/{{ film.id }}/delete" class="btn btn-danger btn-sm">Töröl</a></td>
+      {% else %}
+      <td></td
+      {% endif %}
+    </tr>
+    {% endif %}
+    {% if film.category_id == 4 %}
+    <tr>
+      <td class="success">{{film.id}}</td>
+      <td class="success">{{film.name}}</td>
+      {% for category in categories %}
+      {% if category.id==film.category_id %}
+      <td class="success">{{category.name}}</td>
+      {% endif %}
+      {% endfor %}
+      <td class="success">{{film.user.username}}</td>
+      <td><a class="result-item" href="/films/{{ film.id }}"><button type="submit" class="btn btn-success btn-sm">Megtekintés</button></a></td>
+      {% if (film.user_id == currentUser.id) %}
+      <td><a href="/films/{{ film.id }}/delete" class="btn btn-danger btn-sm">Töröl</a></td>
+      {% else %}
+      <td></td
+      {% endif %}
+    </tr>
+    {% endif %}
+    {% if film.category_id == 5 %}
+    <tr>
+      <td class="info">{{film.id}}</td>
+      <td class="info">{{film.name}}</td>
+      {% for category in categories %}
+      {% if category.id==film.category_id %}
+      <td class="info">{{category.name}}</td>
+      {% endif %}
+      {% endfor %}
+      <td class="info">{{film.user.username}}</td>
+      <td><a class="result-item" href="/films/{{ film.id }}"><button type="submit" class="btn btn-success btn-sm">Megtekintés</button></a></td>
+      {% if (film.user_id == currentUser.id) %}
+      <td><a href="/films/{{ film.id }}/delete" class="btn btn-danger btn-sm">Töröl</a></td>
+      {% else %}
+      <td></td
+      {% endif %}
+    </tr>
+    {% endif %}
+    {% if film.category_id == 6 %}
+    <tr>
+      <td class="primary">{{film.id}}</td>
+      <td class="primary">{{film.name}}</td>
+      {% for category in categories %}
+      {% if category.id==film.category_id %}
+      <td class="primary">{{category.name}}</td>
+      {% endif %}
+      {% endfor %}
+      <td class="primary">{{film.user.username}}</td>
+      <td><a class="result-item" href="/films/{{ film.id }}"><button type="submit" class="btn btn-success btn-sm">Megtekintés</button></a></td>
+      {% if (film.user_id == currentUser.id) %}
+      <td><a href="/films/{{ film.id }}/delete" class="btn btn-danger btn-sm">Töröl</a></td>
+      {% else %}
+      <td></td
+      {% endif %}
+    </tr>
+    {% endif %}
+  </tbody>
+{% endfor %}
+</table>
+  </div>
+  {% else %}
+  <p>Nem találtam ilyen filmet :(</p>
+  {% endfor %}
+  {% if films.lastPage > 1 %}
+  <div class="text-center">
+    <ul class="pagination">
+      {% for page in range(1, films.lastPage + 1) %}
+      {% if page == films.currentPage %}
+      <li class="active">
+        <a href="/films?p={{ page }}&amp;filmName={{ filters.filmName }}&amp;category={{ filters.category }}&amp;createdBy={{ filters.createdBy }}">{{ page }}</a>
+      </li>
+      {% else %}
+      <li><a href="/films?p={{ page }}&amp;filmName={{ filters.filmName }}&amp;category={{ filters.category }}&amp;createdBy={{ filters.createdBy }}">{{ page }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+{% endblock %}
