@@ -207,7 +207,10 @@ Fejlesztő környezet: Visual Studio Code
 * Selenium IDE használata: Commandok hozzáadása->mikor milyen lépés következik, milyen oldalnak kell megjelennie, minek kell történnie.
 
 ### Saját tesztjeim
-1. Felhasználó regisztrálása és kijelentkezése
+
+**Fontos: A teszteket ebben a sorrendben kell lefuttatni, mert épülnek egymásra!!!!**
+
+1. Felhasználó regisztrálása(ekkor be is jelentkezik) és kijelentkezése
 2. Most regisztrált felhasználó bejelentkezése és kijelentkezése
 3. Most regisztrált felhasználó bejelentkezése->film létrehozása->kijelentkezése
 4. Most létrehozott film törlése(bejelentkezés->törlés->kijelentkezés)
